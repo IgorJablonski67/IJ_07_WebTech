@@ -1,10 +1,12 @@
 function Navigation(){
     return(
         <nav>
-            <p>Strona główna</p>
-            <p>Technologie</p>
-            <p>O projekcie</p>
-            <p>Kontakt</p>
+            <ul>
+                <li>Strona główna</li>
+                <li>Technologie</li>
+                <li>O projekcie</li>
+                <li>Kontakt</li>
+            </ul>
         </nav>
     )
 }
