@@ -10,6 +10,7 @@ import Header from './components/Header.jsx'
 import Footer from './components/footer.jsx'
 import Technology from './components/Technology.jsx'
 import CourseCard from './components/CourseCard.jsx'
+import StudentCard from './components/StudentCard.jsx'
 
 function App() {
 
@@ -17,20 +18,46 @@ function App() {
     {
       id:0,
       name:"React",
-      category:"Frontend"
+      category:"Frontend",
+      hours: 30
     },
     {
       id:1,
       name:"Node.js",
-      category:"Backend"
+      category:"Backend",
+      hours: 10
     },
     {
       id:2,
       name:"MySQL",
-      category:"Database"
+      category:"Database",
+      hours: 36
     }
   ]
 
+  const studentCards = [
+    {
+      name:"Igor Jabłoński",
+      class:"4P",
+      specialization:"Technik Programista",
+      age:18,
+      active:true
+    },
+    {
+      name:"Maciek Borek",
+      class:"3I",
+      specialization:"Technik Informatyk",
+      age:16,
+      active:true
+    },
+    {
+      name:"Tomasz Perła",
+      class:"5P",
+      specialization:"Technik Programista",
+      age:19,
+      active:false
+    }
+  ]
 
 
   return (
@@ -40,25 +67,18 @@ function App() {
 
       <main>
 
-        <p>id: {Technologie[0].id}</p>
-        <p>Nazwa: {Technologie[0].name}</p>
-        <p>Kategoria: {Technologie[0].category}</p>
+        
+        <Technology name={Technologie[0].name} category={Technologie[0].category} hours={Technologie[0].hours} />
+        <Technology name={Technologie[1].name} category={Technologie[1].category} hours={Technologie[1].hours} />
+        <Technology name={Technologie[2].name} category={Technologie[2].category} hours={Technologie[2].hours} />
 
-        <p>id: {Technologie[1].id}</p>
-        <p>Nazwa: {Technologie[1].name}</p>
-        <p>Kategoria: {Technologie[1].category}</p>
-
-        <p>id: {Technologie[2].id}</p>
-        <p>Nazwa: {Technologie[2].name}</p>
-        <p>Kategoria: {Technologie[2].category}</p>
-
-        <Technology />
-
-        <CourseCard />
-
-        <Student />
+    
+        <StudentCard StudentCard={studentCards[0]}/>
+        <StudentCard StudentCard={studentCards[1]}/>
+        <StudentCard StudentCard={studentCards[2]}/>
         
         <InfoBox />
+        <CourseCard />
         
       </main>
       <Footer />
