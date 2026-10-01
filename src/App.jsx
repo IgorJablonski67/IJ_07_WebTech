@@ -35,29 +35,48 @@ function App() {
     }
   ]
 
-  const studentCards = [
+    const Students = [
     {
+      id:0,
       name:"Igor Jabłoński",
       class:"4P",
       specialization:"Technik Programista",
-      age:18,
-      active:true
+      age:18
     },
     {
+      id:1,
       name:"Maciek Borek",
       class:"3I",
       specialization:"Technik Informatyk",
-      age:16,
-      active:true
+      age:16
     },
     {
+      id:2,
       name:"Tomasz Perła",
       class:"5P",
       specialization:"Technik Programista",
-      age:19,
-      active:false
+      age:19
     }
-  ]
+    ]
+
+    const samochody =[
+      {
+        marka:"ford"
+      },
+      {
+        marka:"Honda"
+      },
+      {
+        marka:"Jeep"
+      },
+      {
+        marka:"Renault"
+      }
+      ,
+      {
+        marka:"Mercedes"
+      }
+    ]
 
 
   return (
@@ -68,17 +87,31 @@ function App() {
       <main>
 
         
-        <Technology name={Technologie[0].name} category={Technologie[0].category} hours={Technologie[0].hours} />
-        <Technology name={Technologie[1].name} category={Technologie[1].category} hours={Technologie[1].hours} />
-        <Technology name={Technologie[2].name} category={Technologie[2].category} hours={Technologie[2].hours} />
-
+      {Technologie.map((technologia)=>(
+         <Technology 
+         key={technologia.id}
+         name={technologia.name}  
+         category={technologia.category}  
+         hours={technologia.hours}  
+         />
+      ))}
+      
     
-        <StudentCard StudentCard={studentCards[0]}/>
-        <StudentCard StudentCard={studentCards[1]}/>
-        <StudentCard StudentCard={studentCards[2]}/>
+      {Students.map((student)=>(
+          <Student
+          key={student.id}
+          name={student.name} 
+          clas={student.class} 
+          age={student.age} 
+          specialization={student.specialization} 
+          />
+      ))}
         
-        <InfoBox />
-        <CourseCard />
+      <ul>
+        {samochody.map((samochod)=>(
+          <li>{samochod.marka}</li>
+        ))}
+      </ul>
         
       </main>
       <Footer />
