@@ -11,28 +11,41 @@ import Footer from './components/footer.jsx'
 import Technology from './components/Technology.jsx'
 import CourseCard from './components/CourseCard.jsx'
 import StudentCard from './components/StudentCard.jsx'
+import Book from './components/Book.jsx'
 
 function App() {
 
   const Technologie =[
     {
-      id:0,
+      id:1,
       name:"React",
       category:"Frontend",
       hours: 30
     },
     {
-      id:1,
+      id:2,
       name:"Node.js",
       category:"Backend",
       hours: 10
     },
     {
-      id:2,
+      id:3,
       name:"MySQL",
       category:"Database",
       hours: 36
-    }
+    },
+    {
+      id: 4,
+      name: "Express",
+      category: "Backend",
+      hours: 25
+      },
+      {
+      id: 5,
+      name: "MongoDB",
+      category: "Baza danych",
+      hours: 20
+      }
   ]
 
     const Students = [
@@ -78,6 +91,12 @@ function App() {
       }
     ]
 
+    const books = [
+    { id: 1, title: "Wiedźmin", author: "Andrzej Sapkowski" },
+    { id: 2, title: "Hobbit", author: "J.R.R. Tolkien" },
+    { id: 3, title: "Lalka", author: "Bolesław Prus" }
+    ];
+
 
   return (
     <div>
@@ -107,6 +126,20 @@ function App() {
           />
       ))}
         
+      {books.map((book)=>(
+        <Book
+          title={book.title}
+          author={book.author}
+        />
+      ))}
+
+      {books.map((book)=>{
+        return(<Book
+          title={book.title}
+          author={book.author}
+        />)
+      })}
+
       <ul>
         {samochody.map((samochod)=>(
           <li>{samochod.marka}</li>
