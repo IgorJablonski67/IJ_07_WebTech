@@ -12,6 +12,8 @@ import Technology from './components/Technology.jsx'
 import CourseCard from './components/CourseCard.jsx'
 import StudentCard from './components/StudentCard.jsx'
 import Book from './components/Book.jsx'
+import Product from './components/Product.jsx'
+
 
 function App() {
 
@@ -97,6 +99,33 @@ function App() {
     { id: 3, title: "Lalka", author: "Bolesław Prus" }
     ];
 
+    const products=[
+      {
+        name:"Laptop",
+        price:3000
+      },
+      {
+        name:"Komputer",
+        price:5000
+      },
+      {
+        name:"Monitor",
+        price:1200
+      },
+      {
+        name:"Klawiatura",
+        price:300
+      },
+      {
+        name:"Mysz",
+        price:120
+      }
+    ] 
+
+
+  function selectProduct(name) {
+  console.log("Wybrany produkt: " + name);
+}
 
   return (
     <div>
@@ -115,7 +144,7 @@ function App() {
          />
       ))}
       
-    
+{/*     
       {Students.map((student)=>(
           <Student
           key={student.id}
@@ -125,8 +154,19 @@ function App() {
           specialization={student.specialization} 
           />
       ))}
-        
-      {books.map((book)=>(
+         */}
+
+      {
+        products.map((product)=>(
+          <Product
+            name={product.name}
+            price={product.price}
+            onSelect={selectProduct}
+            >
+          </Product>
+        ))
+      }
+      {/* {books.map((book)=>(
         <Book
           title={book.title}
           author={book.author}
@@ -138,13 +178,13 @@ function App() {
           title={book.title}
           author={book.author}
         />)
-      })}
+      })} */}
 
-      <ul>
+      {/* <ul>
         {samochody.map((samochod)=>(
           <li>{samochod.marka}</li>
         ))}
-      </ul>
+      </ul> */}
         
       </main>
       <Footer />
