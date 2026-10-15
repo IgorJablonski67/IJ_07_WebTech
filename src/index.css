@@ -52,7 +52,7 @@
 
 body {
   margin: 0;
-  background-color: #79372c;
+
 
 }
 
@@ -113,29 +113,4 @@ code {
   background: var(--code-bg);
 }
 
-.bloki {
-  display: inline-block;
-  width: 40%;
-  margin: 2%;
-  background-color: #582e2e;
-  border-radius: 5%;
-  padding: 3%;
-  color: #d9ff00;
-  
-  transition: transform 0.3s ease;
-}
 
-
-.bloki:hover {
-    transform: scale(1.08); 
-}
-
-main {
-  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  transform-origin: center center; 
-}
-
-
-.obrocona-strona {
-  transform: rotate(180deg);
-}
