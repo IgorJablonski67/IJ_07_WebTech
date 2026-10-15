@@ -1,21 +1,19 @@
-function Technology({name,category,hours}) {
-  function showTechnology(){
-    console.log("Technologia: " + name);
-    console.log("Kategoria: " + category);
-    console.log("Liczba godzin: " + hours);
+function Technology({name,category,hours,image,onBlockClick}) {
+
+  function przycisk(aha)
+  {
+    
+    onBlockClick();
   }
+
   return (
-    <section>
-      <h2>{name}</h2>
+    <section className="bloki" onClick={()=>przycisk(name)}>
+      <h3>{name}</h3>
+      <img src={image} alt={name} />
       <p>Kategoria: {category}</p>
       <p>Liczba godzin: {hours}</p>
-    <button onClick={showTechnology}>
-      Pokaż informacje
-    </button>
     </section>
   );
 }
-
-
 
 export default Technology;
