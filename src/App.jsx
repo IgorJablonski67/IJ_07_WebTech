@@ -19,6 +19,7 @@ function App() {
 
    const [counter,setCounter] = useState(0);
    const [active, setActive] = useState(false);
+   const [visible, setVisible] = useState(true);
 
     const technologies = [
     { id: 1, name: "React", category: "Frontend", hours: 30, image: "react.webp" },
@@ -157,6 +158,10 @@ function App() {
         <button onClick={()=>{setCounter(100)}}>Ustaw 100</button>
         <p>{active ? "Aktywny":"Nieaktywny"}</p>
         <button onClick={()=>{setActive(!active)}}>Zmień</button>
+        <p className={visible?"":"notvisible"}>tekst</p>
+        <button onClick={()=>{setVisible(!v)}}>Przelacz widoczność</button>
+
+       
       
       {Technologie.map((technologia)=>(
          <Technology 
