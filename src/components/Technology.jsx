@@ -6,20 +6,22 @@ function Technology({name,category,hours,image,onBlockClick}) {
 
 
   return (
-    <section>
-      <h3>{name}</h3>
+    <section className='card'>
+      <div className='card-body'>
+      <h3 className='card-title'>{name}</h3>
       {/* <img src={image} alt={name} /> */}
-      <p>Kategoria: {category}</p>
-      <p>Liczba godzin: {hours}</p>
-      <p>Polubienia: {likes}</p>
-      <button onClick={() => setLikes(likes + 1)}>
+      <p className="card-text">Kategoria: {category}</p>
+      <p className="card-text">Liczba godzin: {hours}</p>
+      <p className="card-text">Polubienia: {likes}</p>
+      <button className='btn btn-primary' onClick={() => setLikes(likes + 1)}>
         Lubię
       </button>
-      <button onClick={() => setLikes(0)}>
+      <button className='btn btn-danger' onClick={() => setLikes(0)}>
         Reset
       </button>
       <p>{isLearning ? "Uczę się":"Jeszcze nie uczę się"}</p>
-        <button onClick={()=>{setIsLearning(!isLearning)}}>Zmień</button>
+        <button type="button" className='active btn' onClick={()=>{setIsLearning(!isLearning)}}>Zmień</button>
+        </div>
     </section>
   );
 }
